@@ -20,8 +20,13 @@ function App() {
 
   return (
     <div className='p-10'>
-      <label>Multiple Allowed? </label>
-      <input type='checkbox' checked={multiple} onChange={toggleMultiple} ></input>
+      <div className='flex flex-col content-center items-center justify-between'>
+        <h1 className='font-bold text-4xl text-sky-900'>Accordian</h1>
+        <div>
+          <label>Multiple Allowed? </label>
+          <input type='checkbox' checked={multiple} onChange={toggleMultiple} ></input>
+        </div>
+      </div>
         {
           questions.map((question)=>(
             <Accordian 
