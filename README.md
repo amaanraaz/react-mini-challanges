@@ -2,3 +2,4 @@
 
 ### Following are the questions covered* and code for same is done using ReactJs
     - Counter
+    - Accordian
