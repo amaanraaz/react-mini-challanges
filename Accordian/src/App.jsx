@@ -24,7 +24,7 @@ function App() {
         <h1 className='font-bold text-4xl text-sky-900'>Accordian</h1>
         <div>
           <label>Multiple Allowed? </label>
-          <input type='checkbox' checked={multiple} onChange={toggleMultiple} ></input>
+          <input type='checkbox' checked={multiple} onChange={toggleMultiple} className='accent-fuchsia-950' ></input>
         </div>
       </div>
         {
