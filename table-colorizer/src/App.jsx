@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-3 gap-4">
         {
           Array(9).fill("").map((e,index)=>
             <div className='border-2'>{index+1}</div>
