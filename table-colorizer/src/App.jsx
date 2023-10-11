@@ -14,22 +14,25 @@ function App() {
   }
 
   return (
-    <div className='flex flex-col items-center m-20'>
+    <>
+    <h1 className='flex justify-center items-center bg-pink-500 h-20 text-white font-serif font-extrabold text-2xl border-2 border-black shadow-2xl'>Table Colorizer</h1>
+    <div className='flex flex-col items-center m-10'>
       <div>
         <input type='number' className='border-2 border-black px-2 py-1 rounded-xl' onChange={(e)=>(setCurrValue(parseInt(e.target.value)))} value={currValue}></input>
-        <button className='border-2 border-black mx-2 px-2 py-1 bg-slate-600 text-white rounded-xl' onClick={handleColor}>Color </button>
-        <button className='border-2 border-black px-2 py-1 bg-slate-600 text-white rounded-xl' onClick={()=>(setColorArray([]))}>Clear All</button>
+        <button className='border-2 border-black mx-2 px-2 py-1 bg-pink-500 text-white rounded-xl' onClick={handleColor}>Color </button>
+        <button className='border-2 border-black px-2 py-1 bg-pink-500 text-white rounded-xl' onClick={()=>(setColorArray([]))}>Clear All</button>
       </div>
       <div className="grid grid-cols-3 m-5 w-60 h-40">
         {
           Array(9).fill("").map((e,index)=>
             <div className={`${
-              colorArray.indexOf(index+1)!='-1'?'bg-red-600 text-white':'bg-white text-black'}
+              colorArray.indexOf(index+1)!='-1'?'bg-pink-500 text-white':'bg-white text-black'}
                border border-black flex justify-center items-center `} key={index}>{index+1}</div>
           )
         }
       </div>
     </div>
+    </>
   )
 }
 
