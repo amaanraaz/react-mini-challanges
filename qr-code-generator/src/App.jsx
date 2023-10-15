@@ -1,13 +1,20 @@
 import { useState } from 'react'
-import { QRCodeSVG } from 'qrcode.react'
+import QRCode from 'qrcode.react'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [text, setText] = useState('');
+  const [value,setValue] = useState('');
 
   return (
     <>
-      <h1>hello</h1>
-      <QRCodeSVG value="hii" />
+      <h1 className='heading'>QR Code Generator</h1>
+      <div className='container'>
+        <input type='text' className='input-box' placeholder='Enter Text Here' onChange={(e)=>(setText(e.target.value))}></input>
+        <button className='generate-btn' onClick={()=>(setValue(text))}>Generate QR Code</button>
+        {
+          value&& <QRCode value={value} size={200}/>
+        }
+      </div>
     </>
   )
 }
