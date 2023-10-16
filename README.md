@@ -7,4 +7,4 @@
     - Table Colorizer
     - Quote Generator
     - QR Code Generator
-    - Number Game
+    - Number Game 
