@@ -5,3 +5,6 @@
     - Accordian
     - Theme Toggling
     - Table Colorizer
+    - Quote Generator
+    - QR Code Generator
+    - Number Game
