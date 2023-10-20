@@ -6,15 +6,19 @@ function App() {
   const [stack, setStack] = useState([])
   const [value,setValue] = useState();
   const [output,setOutput] = useState('');
+  const [size,setSize] = useState();
 
   const handleValue = (e)=>{
     setValue(e.target.value);
   }
 
   const handlePush = ()=>{
-    if(value){
+    if(value && stack.length<size){
       setStack((prev)=>[value,...prev]);
       setOutput(`${value} is pushed into stack`)
+    }
+    else{
+      setOutput("Stack is full")
     }
   }
   
@@ -42,7 +46,7 @@ function App() {
   }
 
   const handleFull = ()=>{
-    if(stack.length==10){
+    if(stack.length==size){
       setOutput("Stack is FUll");
     }
     else{
@@ -53,7 +57,13 @@ function App() {
 
   return (
     <>
-      <input type='number' placeholder='Set Stack Size'></input>
+      <select onChange={e=>setSize(e.target.value)}>
+        <option>--Stack Size--</option>
+        <option>10</option>
+        <option>20</option>
+        <option>30</option>
+        <option>40</option>
+      </select>
       <input type='text' placeholder='Enter a value' onChange={handleValue}></input>
       <div>
         <button onClick={handlePush}>Push</button>
