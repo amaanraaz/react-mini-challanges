@@ -57,25 +57,33 @@ function App() {
 
   return (
     <>
-      <select onChange={e=>setSize(e.target.value)}>
-        <option>--Stack Size--</option>
+      <h1 className='heading'>Stack</h1>
+
+      <select className='input-select' onChange={e=>setSize(e.target.value)}>
+        <option>Size</option>
         <option>10</option>
         <option>20</option>
         <option>30</option>
         <option>40</option>
       </select>
-      <input type='text' placeholder='Enter a value' onChange={handleValue}></input>
-      <div>
-        <button onClick={handlePush}>Push</button>
-        <button onClick={handlePop}>Pop</button>
-        <button onClick={handlePeek}>Peek</button>
-        <button onClick={handleEmpty}>IsEmpty</button>
-        <button onClick={handleFull}>IsFull</button>
+      <input className='input-container' type='text' placeholder='Enter a value' onChange={handleValue}></input>
+      <div className='btns'>
+        <button className='btn' onClick={handlePush}>Push</button>
+        <button className='btn' onClick={handlePop}>Pop</button>
+        <button className='btn' onClick={handlePeek}>Peek</button>
+        <button className='btn' onClick={handleEmpty}>IsEmpty</button>
+        <button className='btn' onClick={handleFull}>IsFull</button>
       </div>
-      <h1>{output}</h1>
-      <div>
-       <h1>{stack}</h1>
-      </div>
+      <h1 className='output-txt'>{output}</h1>
+      {
+        stack.length && <div className='stack-container'>
+          {
+            stack.map((i,index)=>(
+              <h1 className='stack-container' key={index}>{i}</h1>
+            ))
+          }
+        </div>
+      }
     </>
   )
 }

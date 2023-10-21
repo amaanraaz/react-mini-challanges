@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.heading{
+    font-size: xx-large;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    color: beige;
+    text-align: center;
+    background-color: deeppink;
+}
+
+.input-select{
+    width: 70px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: medium;
+    margin-left: 40%;
+    margin-top: 20px;
+    padding: 5px;
+}
+.input-container{
+    width: 200px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: medium;
+    padding: 5px;
+    margin-left: 1px;
+    padding-left: 10px;
+}
+
+.btns{
+    margin-left: 39%;
+    margin-top: 10px;
+}
+.btn{
+    padding: 10px;
+    background-color: deeppink;
+    color: beige;
+    border: none;
+    border-radius: 10px;
+    margin: 5px;
+}
+.output-txt{
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    color: beige;
+    text-align: center;
+    background-color: deeppink;
+}
+.stack-container{
+    display: flex;
+    flex-direction: column;
+    font-size: x-large;
+    margin-top: 10px;
+    margin-left: 150px;
+    margin-right: 150px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    color: beige;
+    text-align: center;
+    background-color: deeppink;
+    border: 2px black solid;
+    padding: 10px;
+}
