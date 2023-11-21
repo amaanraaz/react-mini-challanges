@@ -1,9 +1,14 @@
 import { useReducer, useState } from 'react'
 import JobResignation from './templates/JobResignation'
+import JobApplication from './templates/JobApplication';
 
 
 function App() {
   const [fields,dispatch] = useReducer((state,action)=>({...state,...action}),{name:'',companyName:'',effectiveDate:'',lastDate:''});
+  const [template,setTemplate] = useState('Job Resignation');
+  const handleTemplate = (e)=>{
+    setTemplate(e.target.value)
+  }
 
   return (
     <>
@@ -11,7 +16,7 @@ function App() {
         <h1>Email Template</h1>
       </div>
       <div>
-        <select>
+        <select value={template} onChange={handleTemplate}>
           <option>Job Application</option>
           <option>Job Resignation</option>
         </select>
@@ -27,7 +32,9 @@ function App() {
         <input type='date' onChange={(e)=>dispatch({lastDate:e.target.value})} value={fields.lastDate}></input>
       </div>
       <div>
-        <JobResignation {...fields} />
+        {
+          template==='Job Application'?<JobApplication/>:<JobResignation {...fields} />
+        }
       </div>
       
     </>
