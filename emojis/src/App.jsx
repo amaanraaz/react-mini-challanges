@@ -17,12 +17,19 @@ function App() {
     
   }
 
+  function copyToClipboard(emoji){
+    navigator.clipboard.writeText(emoji.character);
+    setTimeout(()=>{
+      alert('copied sucessfullu')
+      },100);
+  }
+
   return (
     <>
       <div className='w-96 h-96 border border-black overflow-auto flex flex-wrap mx-auto my-auto'>
         {
           emojis.map((emoji,index)=>(
-            <h1 key={index}>{emoji.character}</h1>
+            <h1 key={index} className='cursor-pointer' onClick={()=>{copyToClipboard(emoji)}}>{emoji.character}</h1>
           ))
         }
       </div>
