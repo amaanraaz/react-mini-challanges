@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  background-color: #F4CE14;
+}
+.board{
+  width: 100vw;
+  height: 100vh;
+  border: 20px solid #379777;
+  cursor: pointer;
+  position: relative;;
+}
+
+.circle{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  /* transform: translate(-50%,-50%); */
+  animation: bounce 0.2s ease-in-out;
+}
+
+.controls{
+  display: flex;
+  gap: 10;
+  margin: 10px;
+}
+.controls button{
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+.controls button:nth-child(1){
+  background-color: #74E291;
+  color: black;
+  font-weight: 400;
+  transition: all 0.2s ease-in-out;
+}
+.controls button:nth-child(2){
+  background-color: #750E21;
+  color: wheat;
+  font-weight: 400;
+}
+.controls button:nth-child(3){
+  background-color: #016A70;
+  color: black;
+  font-weight: 400;
+}
+.controls button:disabled{
+  background-color: #B6C4B6;
+  color: black;
+  cursor: default;
+}
+
+@keyframes bounce {
+  from {
+    transform: scale(0);
+  }
+  to{
+    transform: scale(1);
+  }
+}
